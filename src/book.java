@@ -33,11 +33,11 @@ public class Book implements Serializable {		//Capitalized Class Name
 	}
 
 	public Integer ID() {
-		return ID;
+		return id;		//Changed to id
 	}
 
 	public String Title() {
-		return T;
+		return title;		//Changed to title
 	}
 
 
@@ -68,7 +68,7 @@ public class Book implements Serializable {		//Capitalized Class Name
 	}
 
 
-	public void Return(boolean DAMAGED) {
+	public void Return (boolean DAMAGED) {
 		if (state.equals(STATE.ON_LOAN)) {
 			if (DAMAGED) {
 				state = STATE.DAMAGED;
