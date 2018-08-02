@@ -2,22 +2,22 @@ import java.io.Serializable;
 
 
 @SuppressWarnings("serial")
-public class book implements Serializable {
+public class Book implements Serializable {		//Capitalized Class Name
 	
-	private String T;
-	private String A;
-	private String C;
-	private int ID;
+	private String author;		//Changed to author
+	private String title;		//Changed to title
+	private String callNo;		//Changed to callNo
+	private int id;		//Changed to id
 	
 	private enum STATE { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
 	private STATE state;
 	
 	
 	public book(String author, String title, String callNo, int id) {
-		this.A = author;
-		this.T = title;
-		this.C = callNo;
-		this.ID = id;
+		this.author = author;		//Changed to author
+		this.tile = title;		//Changed to title
+		this.callNo = callNo;		//Changed to callNo
+		this.id = id;		//Changed to id
 		this.state = STATE.AVAILABLE;
 	}
 	
