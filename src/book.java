@@ -23,11 +23,11 @@ public class Book implements Serializable {		//Capitalized Class Name
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Book: ").append(ID).append("\n")
-		  .append("  Title:  ").append(T).append("\n")
-		  .append("  Author: ").append(A).append("\n")
-		  .append("  CallNo: ").append(C).append("\n")
-		  .append("  State:  ").append(state);
+		sb.append("Book: ").append(id).append("\n")
+		  .append("Title: ").append(title).append("\n")		//Reduced unnecessary spaces and changed to title
+		  .append("Author: ").append(author).append("\n")		//Reduced unnecessary spaces and changed to author
+		  .append("CallNo: ").append(callNo).append("\n")		//Reduced unnecessary spaces and changed to callNo
+		  .append("State: ").append(state);		//Reduced unnecessary spaces
 		
 		return sb.toString();
 	}
