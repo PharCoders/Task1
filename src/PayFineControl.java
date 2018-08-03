@@ -5,7 +5,7 @@ public class PayFineControl {
 	private CONTROL_STATE state;
 	
 	private Library library; //changed library to Library. 
-	private Member member;; //changed member to Member.
+	private Member member; //changed member to Member and removed an extra semi-colon.
 
 
 	public PayFineControl() {
@@ -49,9 +49,10 @@ public class PayFineControl {
 	public Double payFine(Double amount) { //changed the naming convention of data field i.e. double to Double
 		if (!state.equals(CONTROL_STATE.PAYING)) {
 			throw new RuntimeException("PayFineControl: cannot call payFine except in PAYING state");
-		}	
+		} 
 		Double change = member.payFine(amount); //changed the naming convention of data field i.e. double to Double
-		if (change > 0) {
+		
+		if (change > 0) { //created a whitespace line before this if statement.
 			ui.display(String.format("Change: $%.2f", change));
 		}
 		ui.display(Member.toString()); //changed member to Member as toString method can be of a Member class.
@@ -61,5 +62,4 @@ public class PayFineControl {
 	}
 	
 
-
-}
+} //Deleted an extra whitespace line before this closing brace.
