@@ -7,7 +7,7 @@ public class loan implements Serializable {
 	
 	public static enum LOAN_STATE { CURRENT, OVER_DUE, DISCHARGED };
 	
-	private int ID;
+	private int id;  // changed capitalization
 	private book B;
 	private member M;
 	private Date D;
@@ -15,7 +15,7 @@ public class loan implements Serializable {
 
 	
 	public loan(int loanId, book book, member member, Date dueDate) {
-		this.ID = loanId;
+		this.id = loanId;
 		this.B = book;
 		this.M = member;
 		this.D = dueDate;
@@ -36,8 +36,8 @@ public class loan implements Serializable {
 	}
 
 	
-	public Integer getId() {
-		return ID;
+	public Integer getid() {
+		return id; // fixed return type variable.
 	}
 
 
@@ -50,10 +50,10 @@ public class loan implements Serializable {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 		StringBuilder sb = new StringBuilder();
-		sb.append("Loan:  ").append(ID).append("\n")
-		  .append("  Borrower ").append(M.getId()).append(" : ")
+		sb.append("Loan:  ").append(id).append("\n") // ID to id
+		  .append("  Borrower ").append(M.getid()).append(" : ")
 		  .append(M.getLastName()).append(", ").append(M.getFirstName()).append("\n")
-		  .append("  Book ").append(B.ID()).append(" : " )
+		  .append("  Book ").append(B.id()).append(" : " ) // ID to id
 		  .append(B.Title()).append("\n")
 		  .append("  DueDate: ").append(sdf.format(D)).append("\n")
 		  .append("  State: ").append(state);		
