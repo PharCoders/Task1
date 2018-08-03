@@ -46,11 +46,11 @@ public class PayFineControl { //initalizing PayFineControl class
 	}
 
 
-	public Double payFine(Double amount) { //changed the naming convention of data field i.e. double to Double
+	public double payFine(double amount) { //changed the naming convention of data field i.e. Double to double
 		if (!state.equals(CONTROL_STATE.PAYING)) {
 			throw new RuntimeException("PayFineControl: cannot call payFine except in PAYING state");
 		} 
-		Double change = member.payFine(amount); //changed the naming convention of data field i.e. double to Double
+		double change = member.payFine(amount); //changed the naming convention of data field i.e. Double to double
 		
 		if (change > 0) { //created a whitespace line before this if statement.
 			ui.display(String.format("Change: $%.2f", change)); //displays the change in decimal format upto 2 decimal with the dollar sign.
