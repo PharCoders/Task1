@@ -46,11 +46,11 @@ public class PayFineControl {
 	}
 
 
-	public double payFine(double amount) {
+	public Double payFine(Double amount) { //changed the naming convention of data field i.e. double to Double
 		if (!state.equals(CONTROL_STATE.PAYING)) {
 			throw new RuntimeException("PayFineControl: cannot call payFine except in PAYING state");
 		}	
-		double change = member.payFine(amount);
+		Double change = member.payFine(amount); //changed the naming convention of data field i.e. double to Double
 		if (change > 0) {
 			ui.display(String.format("Change: $%.2f", change));
 		}
