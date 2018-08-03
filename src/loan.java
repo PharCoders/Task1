@@ -47,16 +47,16 @@ public class loan implements Serializable {
 	
 	
 	public String toString() {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy"); // Organised MM to mm
+		// fixed unnecessary white spaces
 		StringBuilder sb = new StringBuilder();
-		sb.append("Loan:  ").append(id).append("\n") // ID to id
-		  .append("  Borrower ").append(member.getid()).append(" : ")  // changed M to member as it has to be meaningful
+		sb.append("Loan: ").append(id).append("\n") // ID to id
+		  .append("Borrower ").append(member.getid()).append(" : ")  // changed M to member as it has to be meaningful
 		  .append(member.getLastName()).append(", ").append(member.getFirstName()).append("\n") // changed M to member as it has to be meaningful
-		  .append("  Book ").append(book.id()).append(" : " ) // ID to id and B to book
+		  .append("Book ").append(book.id()).append(" : " ) // ID to id and B to book
 		  .append(book.Title()).append("\n") // changed B to book
-		  .append("  DueDate: ").append(sdf.format(D)).append("\n")
-		  .append("  State: ").append(state);		
+		  .append("DueDate: ").append(sdf.format(D)).append("\n")
+		  .append("State: ").append(state);		
 		return sb.toString();
 	}
 
