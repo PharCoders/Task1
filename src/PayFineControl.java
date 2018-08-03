@@ -1,4 +1,4 @@
-public class PayFineControl {
+public class PayFineControl { //initalizing PayFineControl class
 	
 	private PayFineUI ui;
 	private enum CONTROL_STATE { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
@@ -14,17 +14,17 @@ public class PayFineControl {
 	}
 	
 	
-	public void setUI(PayFineUI ui) {
+	public void setUI(PayFineUI ui) { //initializing method setUI
 		if (!state.equals(CONTROL_STATE.INITIALISED)) {
 			throw new RuntimeException("PayFineControl: cannot call setUI except in INITIALISED state");
 		}	
 		this.ui = ui;
 		ui.setState(PayFineUI.UI_STATE.READY);
-		state = CONTROL_STATE.READY;		
+		state = CONTROL_STATE.READY; // sets the state to ready.		
 	}
 
 
-	public void cardSwiped(int memberId) {
+	public void cardSwiped(int memberId) { //initializing method cardSwiped
 		if (!state.equals(CONTROL_STATE.READY)) {
 			throw new RuntimeException("PayFineControl: cannot call cardSwiped except in READY state");
 		}	
@@ -36,13 +36,13 @@ public class PayFineControl {
 		}
 		ui.display(Member.toString()); //changed member to Member as toString method can be of a Member class.
 		ui.setState(PayFineUI.UI_STATE.PAYING);
-		state = CONTROL_STATE.PAYING;
+		state = CONTROL_STATE.PAYING; //sets the state to paying.
 	}
 	
 	
 	public void cancel() {
 		ui.setState(PayFineUI.UI_STATE.CANCELLED);
-		state = CONTROL_STATE.CANCELLED;
+		state = CONTROL_STATE.CANCELLED; //sets the state to cancelled.
 	}
 
 
@@ -53,11 +53,11 @@ public class PayFineControl {
 		Double change = member.payFine(amount); //changed the naming convention of data field i.e. double to Double
 		
 		if (change > 0) { //created a whitespace line before this if statement.
-			ui.display(String.format("Change: $%.2f", change));
+			ui.display(String.format("Change: $%.2f", change)); //displays the change in decimal format upto 2 decimal with the dollar sign.
 		}
 		ui.display(Member.toString()); //changed member to Member as toString method can be of a Member class.
 		ui.setState(PayFineUI.UI_STATE.COMPLETED);
-		state = CONTROL_STATE.COMPLETED;
+		state = CONTROL_STATE.COMPLETED; //sets the state to completed.
 		return change;
 	}
 	
