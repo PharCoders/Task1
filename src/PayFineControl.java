@@ -4,12 +4,12 @@ public class PayFineControl {
 	private enum CONTROL_STATE { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
 	private CONTROL_STATE state;
 	
-	private library library;
+	private Library library; //changed library to Library. 
 	private member member;;
 
 
 	public PayFineControl() {
-		this.library = library.INSTANCE();
+		this.library = Library.INSTANCE(); //changed library to Library as instance can be of class.
 		state = CONTROL_STATE.INITIALISED;
 	}
 	
@@ -28,7 +28,7 @@ public class PayFineControl {
 		if (!state.equals(CONTROL_STATE.READY)) {
 			throw new RuntimeException("PayFineControl: cannot call cardSwiped except in READY state");
 		}	
-		member = library.getMember(memberId);
+		member = Library.getMember(memberId); //changed library to Library.
 		
 		if (member == null) {
 			ui.display("Invalid Member Id");
