@@ -5,7 +5,7 @@ public class PayFineControl {
 	private CONTROL_STATE state;
 	
 	private Library library; //changed library to Library. 
-	private member member;;
+	private Member member;; //changed member to Member.
 
 
 	public PayFineControl() {
@@ -31,10 +31,10 @@ public class PayFineControl {
 		member = Library.getMember(memberId); //changed library to Library.
 		
 		if (member == null) {
-			ui.display("Invalid Member Id");
+			ui.display("Invalid Member ID"); //changed Id to ID as it can be changed as it is just output statement.
 			return;
 		}
-		ui.display(member.toString());
+		ui.display(Member.toString()); //changed member to Member as toString method can be of a Member class.
 		ui.setState(PayFineUI.UI_STATE.PAYING);
 		state = CONTROL_STATE.PAYING;
 	}
@@ -54,7 +54,7 @@ public class PayFineControl {
 		if (change > 0) {
 			ui.display(String.format("Change: $%.2f", change));
 		}
-		ui.display(member.toString());
+		ui.display(Member.toString()); //changed member to Member as toString method can be of a Member class.
 		ui.setState(PayFineUI.UI_STATE.COMPLETED);
 		state = CONTROL_STATE.COMPLETED;
 		return change;
