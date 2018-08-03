@@ -8,16 +8,16 @@ public class loan implements Serializable {
 	public static enum LOAN_STATE { CURRENT, OVER_DUE, DISCHARGED };
 	
 	private int id;  // changed capitalization
-	private Book book;  //captializedbook and changed the initialization
-	private member M;
+	private Book book;  //captialized book and changed the initialization
+	private Member member; // captialized and changed the initialization
 	private Date D;
 	private LOAN_STATE state;
 
 	
-	public loan(int loanId, Book book, member member, Date dueDate) {
+	public loan(int loanId, Book book, Member member, Date dueDate) {
 		this.id = loanId;
 		this.book = book;  //Changed B to book
-		this.M = member;
+		this.member = member; //changed M to member
 		this.D = dueDate;
 		this.state = LOAN_STATE.CURRENT;
 	}
@@ -51,8 +51,8 @@ public class loan implements Serializable {
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("Loan:  ").append(id).append("\n") // ID to id
-		  .append("  Borrower ").append(M.getid()).append(" : ")
-		  .append(M.getLastName()).append(", ").append(M.getFirstName()).append("\n")
+		  .append("  Borrower ").append(member.getid()).append(" : ")  // changed M to member as it has to be meaningful
+		  .append(member.getLastName()).append(", ").append(member.getFirstName()).append("\n") // changed M to member as it has to be meaningful
 		  .append("  Book ").append(book.id()).append(" : " ) // ID to id and B to book
 		  .append(book.Title()).append("\n") // changed B to book
 		  .append("  DueDate: ").append(sdf.format(D)).append("\n")
@@ -61,12 +61,12 @@ public class loan implements Serializable {
 	}
 
 
-	public member Member() {
-		return M;
+	public Member member() { // Changed member to Member
+		return member; // Changed M to member
 	}
 
 
-	public Book Book() {  // changed book to Book
+	public Book book() {  // changed book to Book
 		return book; //changed B to book 
 	}
 
