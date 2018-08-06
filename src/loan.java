@@ -10,7 +10,7 @@ public class loan implements Serializable {
 	private int id;  // changed capitalization
 	private Book book;  //captialized book and changed the initialization
 	private Member member; // captialized and changed the initialization
-	private Date D;
+	private Date date; // changed the initialization
 	private LOAN_STATE state;
 
 	
@@ -18,14 +18,14 @@ public class loan implements Serializable {
 		this.id = loanId;
 		this.book = book;  //Changed B to book
 		this.member = member; //changed M to member
-		this.D = dueDate;
+		this.date = dueDate; // Changed D to date
 		this.state = LOAN_STATE.CURRENT;
 	}
 
 	
 	public void checkOverDue() {
 		if (state == LOAN_STATE.CURRENT &&
-			Calendar.getInstance().Date().after(D)) {
+			Calendar.getInstance().Date().after(date)) { // D to date
 			this.state = LOAN_STATE.OVER_DUE;			
 		}
 	}
@@ -42,7 +42,7 @@ public class loan implements Serializable {
 
 
 	public Date getDueDate() {
-		return D;
+		return date; // D to date
 	}
 	
 	
@@ -55,7 +55,7 @@ public class loan implements Serializable {
 		  .append(member.getLastName()).append(", ").append(member.getFirstName()).append("\n") // changed M to member as it has to be meaningful
 		  .append("Book ").append(book.id()).append(" : " ) // ID to id and B to book
 		  .append(book.Title()).append("\n") // changed B to book
-		  .append("DueDate: ").append(sdf.format(D)).append("\n")
+		  .append("DueDate: ").append(sdf.format(date)).append("\n") // D to date
 		  .append("State: ").append(state);		
 		return sb.toString();
 	}
