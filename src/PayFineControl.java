@@ -14,7 +14,7 @@ public class PayFineControl { //initalizing PayFineControl class
 	}
 	
 	
-	public void setUI(PayFineUI ui) { //initializing method setUI
+	public void setUI (PayFineUI ui) { //initializing method setUI and increased space.
 		if (!state.equals(CONTROL_STATE.INITIALISED)) {
 			throw new RuntimeException("PayFineControl: cannot call setUI except in INITIALISED state");
 		}	
@@ -24,11 +24,11 @@ public class PayFineControl { //initalizing PayFineControl class
 	}
 
 
-	public void cardSwiped(int memberId) { //initializing method cardSwiped
+	public void cardSwiped (int memberID) { //initializing method cardSwiped. changed memberId to memberID and increased space.
 		if (!state.equals(CONTROL_STATE.READY)) {
 			throw new RuntimeException("PayFineControl: cannot call cardSwiped except in READY state");
 		}	
-		member = Library.getMember(memberId); //changed library to Library.
+		member = Library.getMember(memberID); //changed library to Library. Changed memberId to memberID.
 		
 		if (member == null) {
 			ui.display("Invalid Member ID"); //changed Id to ID as it can be changed as it is just output statement.
@@ -46,7 +46,7 @@ public class PayFineControl { //initalizing PayFineControl class
 	}
 
 
-	public double payFine(double amount) { //changed the naming convention of data field i.e. Double to double
+	public double payFine (double amount) { //changed the naming convention of data field i.e. Double to double and increased space.
 		if (!state.equals(CONTROL_STATE.PAYING)) {
 			throw new RuntimeException("PayFineControl: cannot call payFine except in PAYING state");
 		} 
@@ -61,5 +61,4 @@ public class PayFineControl { //initalizing PayFineControl class
 		return change;
 	}
 	
-
 } //Deleted an extra whitespace line before this closing brace.
