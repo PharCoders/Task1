@@ -223,22 +223,19 @@ public class Library implements Serializable { //changed library to Library
 
 
 	public void checkCurrentLoans() {
-		for (loan loan : currentLoans.values()) {
+		for (Loan loan : currentLoans.values()) { //loan to Loan.
 			loan.checkOverDue();
 		}		
 	}
 
 
-	public void repairBook(book currentBook) {
-		if (damagedBooks.containsKey(currentBook.ID())) {
+	public void repairBook(Book currentBook) { //book to Book.
+		if (damagedBooks.containsKey(currentBook.bookID())) { //ID to bookID.
 			currentBook.Repair();
-			damagedBooks.remove(currentBook.ID());
+			damagedBooks.remove(currentBook.bookID()); //ID to bookID.
 		}
 		else {
 			throw new RuntimeException("Library: repairBook: book is not damaged");
 		}
 		
-	}
-	
-	
-}
+extra space line.
