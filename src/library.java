@@ -170,31 +170,31 @@ public class Library implements Serializable { //changed library to Library
 	}
 
 	
-	public int loansRemainingForMember(member member) {		
+	public int loansRemainingForMember(Member member) { // member to Member		
 		return LOAN_LIMIT - member.getNumberOfCurrentLoans();
 	}
 
 	
-	public loan issueLoan(book book, member member) {
+	public Loan issueLoan(Book book, Member member) { // loan to Loan, book to Book, member to Member.
 		Date dueDate = Calendar.getInstance().getDueDate(LOAN_PERIOD);
-		loan loan = new loan(nextLID(), book, member, dueDate);
+		Loan loan = new loan(nextloanID(), book, member, dueDate); // loan to Loan. LID to loanID.
 		member.takeOutLoan(loan);
 		book.Borrow();
-		loans.put(loan.getId(), loan);
-		currentLoans.put(book.ID(), loan);
+		loans.put(loan.getloanId(), loan); // Id to loanID.
+		currentLoans.put(book.bookID(), loan); // ID to bookID.
 		return loan;
 	}
 	
 	
-	public loan getLoanByBookId(int bookId) {
-		if (currentLoans.containsKey(bookId)) {
-			return currentLoans.get(bookId);
+	public Loan getLoanByBookId(int bookID) { // loan to Loan. bookId to bookID.
+		if (currentLoans.containsKey(bookID)) { // bookId to bookID.
+			return currentLoans.get(bookID); // bookId to bookID.
 		}
 		return null;
 	}
 
 	
-	public double calculateOverDueFine(loan loan) {
+	public double calculateOverDueFine(Loan loan) { //Loan to loan.
 		if (loan.isOverDue()) {
 			long daysOverDue = Calendar.getInstance().getDaysDifference(loan.getDueDate());
 			double fine = daysOverDue * FINE_PER_DAY;
