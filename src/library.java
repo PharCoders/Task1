@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("serial")
-public class library implements Serializable {
+public class Library implements Serializable { //changed library to Library
 	
 	private static final String LIBRARY_FILE = "library.obj";
 	private static final int LOAN_LIMIT = 2;
@@ -23,9 +23,9 @@ public class library implements Serializable {
 	private static final double DAMAGE_FEE = 2.0;
 	
 	private static library self;
-	private int BID;
-	private int MID;
-	private int LID;
+	private int bookID; //changed BID to bookID
+	private int memberID; //changed MID to memberID
+	private int loanID; //changed LID to loanID
 	private Date loadDate;
 	
 	private Map<Integer, book> catalog;
@@ -41,9 +41,9 @@ public class library implements Serializable {
 		loans = new HashMap<>();
 		currentLoans = new HashMap<>();
 		damagedBooks = new HashMap<>();
-		BID = 1;
-		MID = 1;		
-		LID = 1;		
+		bookID = 1; //changed BID to bookID
+		memberID = 1; // changed MID to memberID		
+		loanID = 1; //changed LID to loanID		
 	}
 
 	
