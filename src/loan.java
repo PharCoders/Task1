@@ -7,15 +7,15 @@ public class loan implements Serializable {
 	
 	public static enum LOAN_STATE { CURRENT, OVER_DUE, DISCHARGED };
 	
-	private int id;  // changed capitalization
+	private int loanID;  // changed capitalization. id to loanID
 	private Book book;  //captialized book and changed the initialization
 	private Member member; // captialized and changed the initialization
 	private Date date; // changed the initialization
 	private LOAN_STATE state;
 
 	
-	public loan(int loanId, Book book, Member member, Date dueDate) {
-		this.id = loanId;
+	public Loan (int loanId, Book book, Member member, Date dueDate) { //loan to Loan
+		this.loan.ID = loanId; //id to loanID
 		this.book = book;  //Changed B to book
 		this.member = member; //changed M to member
 		this.date = dueDate; // Changed D to date
@@ -36,8 +36,8 @@ public class loan implements Serializable {
 	}
 
 	
-	public Integer getid() {
-		return id; // fixed return type variable.
+	public Integer getloanID() { //getid to getloanID
+		return loanID; // id to loanID.
 	}
 
 
@@ -50,11 +50,11 @@ public class loan implements Serializable {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy"); // Organised MM to mm
 		// fixed unnecessary white spaces
 		StringBuilder sb = new StringBuilder();
-		sb.append("Loan: ").append(id).append("\n") // ID to id
-		  .append("Borrower ").append(member.getid()).append(" : ")  // changed M to member as it has to be meaningful
+		sb.append("Loan: ").append(loanID).append("\n") // id to loanID
+		  .append("Borrower ").append(member.getmemberID()).append(" : ")  // changed member.getid to member.getmemberID
 		  .append(member.getLastName()).append(", ").append(member.getFirstName()).append("\n") // changed M to member as it has to be meaningful
-		  .append("Book ").append(book.id()).append(" : " ) // ID to id and B to book
-		  .append(book.Title()).append("\n") // changed B to book
+		  .append("Book ").append(book.bookID()).append(" : " ) // changed book.id to book.bookID
+		  .append(book.title()).append("\n") // Title to title
 		  .append("DueDate: ").append(sdf.format(date)).append("\n") // D to date
 		  .append("State: ").append(state);		
 		return sb.toString();
