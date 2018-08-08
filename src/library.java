@@ -82,28 +82,28 @@ public class Library implements Serializable { //changed library to Library
 	}
 
 	
-	public int BookID() {
-		return BID;
+	public int bookID() { // changed BookID to bookID
+		return bookID; // changed BID to bookID
 	}
 	
 	
-	public int MemberID() {
-		return MID;
+	public int memberID() { // changed MemberID to memberID
+		return memberID; // changed MID to memberID
 	}
 	
 	
-	private int nextBID() {
-		return BID++;
-	}
-
-	
-	private int nextMID() {
-		return MID++;
+	private int nextbookID() { // changed BID to bookID
+		return bookID++; // changed BID to bookID
 	}
 
 	
-	private int nextLID() {
-		return LID++;
+	private int nextmemberID() { // changed MID to memberID
+		return memberID++; // changed MID to memberID
+	}
+
+	
+	private int nextloanID() { // changed LID to loanID
+		return loanID++; // changed LID to loanID
 	}
 
 	
