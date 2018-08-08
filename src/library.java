@@ -122,30 +122,30 @@ public class Library implements Serializable { //changed library to Library
 	}
 
 
-	public member Add_mem(String lastName, String firstName, String email, int phoneNo) {		
-		member member = new member(lastName, firstName, email, phoneNo, nextMID());
-		members.put(member.getId(), member);		
+	public Member add_member(String lastName, String firstName, String email, int phoneNo) { //changed mem to member. and member to Member. and Add_member to add_member.		
+		Member member = new member(lastName, firstName, email, phoneNo, nextMID()); // member to Member and MID to memberID. member to Member
+		members.put(member.getmemberID(), member); //	Id to memberID	
 		return member;
 	}
 
 	
-	public book Add_book(String a, String t, String c) {		
-		book b = new book(a, t, c, nextBID());
-		catalog.put(b.ID(), b);		
-		return b;
+	public Book add_book(String author, String title, String callNo) { //book to Book. Add_book to add_book. a to author, t to title and c to callNo.		
+		Book book = new book(author, title, callNo, nextbookID()); //book to Book. a to author, t to title and c to callNo. BID to bookID. b to book.
+		catalog.put(book.bookID(), book); // ID to bookID. b to book		
+		return book; //b to book
 	}
 
 	
-	public member getMember(int memberId) {
-		if (members.containsKey(memberId)) 
-			return members.get(memberId);
+	public Member getMember(int memberID) { //member to Member. memberId to memberID.
+		if (members.containsKey(memberID)) //memberId to memberID.
+			return members.get(memberID); //memberId to memberID
 		return null;
 	}
 
 	
-	public book Book(int bookId) {
-		if (catalog.containsKey(bookId)) 
-			return catalog.get(bookId);		
+	public Book getBook(int bookID) { //book to Book. implemented get method. boodId to bookID
+		if (catalog.containsKey(bookID)) //bookId to bookID
+			return catalog.get(bookID); //	bookId to bookID	
 		return null;
 	}
 
