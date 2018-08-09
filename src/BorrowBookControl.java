@@ -81,10 +81,10 @@ public class BorrowBookControl {
 		}
 		else {
 			ui.display("\nFinal Borrowing List");
-			for (book book : PENDING) {		//Changed to 'book'
+			for (Book book : PENDING) {		//Changed to 'book''Book'
 				ui.display(book.toString());		//Changed to 'book'
 			}
-			COMPLETED = new ArrayList<Loan>();		//Changed to 'Loan
+			COMPLETED = new ArrayList<Loan>();		//Changed to 'Loan'
 			ui.setState(BorrowBookUI.UI_STATE.FINALISING);
 			state = CONTROL_STATE.FINALISING;
 		}
