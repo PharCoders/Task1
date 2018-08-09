@@ -5,7 +5,7 @@ public class BorrowBookControl {
 	
 	private BorrowBookUI ui;
 	
-	private library L;
+	private Library library;		//Changed name to 'library'
 	private member M;
 	private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
 	private CONTROL_STATE state;
@@ -16,7 +16,7 @@ public class BorrowBookControl {
 	
 	
 	public BorrowBookControl() {
-		this.L = L.INSTANCE();
+		this.library = Library.INSTANCE();		//Changed name to 'library' 'Library'
 		state = CONTROL_STATE.INITIALISED;
 	}
 	
@@ -35,12 +35,12 @@ public class BorrowBookControl {
 		if (!state.equals(CONTROL_STATE.READY)) 
 			throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
 			
-		M = L.getMember(memberId);
+		member = library.getMember(memberID);		////Changed name to 'library' and 'member' 'ID'
 		if (M == null) {
 			ui.display("Invalid memberId");
 			return;
 		}
-		if (L.memberCanBorrow(M)) {
+		if (library.memberCanBorrow(member)) {		//Changed name to 'library' and 'member'
 			PENDING = new ArrayList<>();
 			ui.setState(BorrowBookUI.UI_STATE.SCANNING);
 			state = CONTROL_STATE.SCANNING; }
@@ -55,7 +55,7 @@ public class BorrowBookControl {
 		if (!state.equals(CONTROL_STATE.SCANNING)) {
 			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
 		}	
-		B = L.Book(bookId);
+		book = library.Book(bookID);		//Changed to 'book''ID''library'
 		if (B == null) {
 			ui.display("Invalid bookId");
 			return;
@@ -96,7 +96,7 @@ public class BorrowBookControl {
 			throw new RuntimeException("BorrowBookControl: cannot call commitLoans except in FINALISING state");
 		}	
 		for (book b : PENDING) {
-			loan loan = L.issueLoan(b, M);
+			Loan loan = library.issueLoan(book, member);		//Changed to 'library' 'book' 'member' 'Loan'
 			COMPLETED.add(loan);			
 		}
 		ui.display("Completed Loan Slip");
