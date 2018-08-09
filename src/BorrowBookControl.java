@@ -5,8 +5,8 @@ public class BorrowBookControl {
 	
 	private BorrowBookUI ui;
 	
-	private Library library;		//Changed name to 'library'
-	private member M;
+	private Library library;		//Changed name to 'library' 'Library'
+	private Member member;		//Changed name to 'member'
 	private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
 	private CONTROL_STATE state;
 	
@@ -36,7 +36,7 @@ public class BorrowBookControl {
 			throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
 			
 		member = library.getMember(memberID);		////Changed name to 'library' and 'member' 'ID'
-		if (M == null) {
+		if (member == null) {		//Changed name to 'member'
 			ui.display("Invalid memberId");
 			return;
 		}
@@ -68,7 +68,7 @@ public class BorrowBookControl {
 		for (book B : PENDING) {
 			ui.display(B.toString());
 		}
-		if (L.loansRemainingForMember(M) - PENDING.size() == 0) {
+		if (library.loansRemainingForMember(member) - PENDING.size() == 0) {		//Changed to 'library' 'member'
 			ui.display("Loan limit reached");
 			Complete();
 		}
