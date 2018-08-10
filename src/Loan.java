@@ -3,7 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @SuppressWarnings("serial")
-public class loan implements Serializable {
+public class Loan implements Serializable { //loan to Loan
 	
 	public static enum LOAN_STATE { CURRENT, OVER_DUE, DISCHARGED };
 	
