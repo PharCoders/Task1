@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
 
-public class PayFineUI {
+public class PayFineUI { //initialising the class PayFineUI.
 
 
 	public static enum UI_STATE { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
 
 	private PayFineControl control;
-	private Scanner input;
+	private Scanner input; //scanner input.
 	private UI_STATE state;
 
 	
@@ -27,11 +27,11 @@ public class PayFineUI {
 	public void run() {
 		output("Pay Fine Use Case UI\n");
 		
-		while (true) {
+		while (true) { //while loop.
 			
-			switch (state) {
+			switch (state) { //switch statement.
 			
-			case READY:
+			case READY: //case ready in which checks whether member card swiped or not and gives output according to it.
 				String memberString = input ("Swipe member card (press <enter> to cancel): "); //memStr to memberString and increased space.
 				if (memberString.length() == 0) { //memStr to memberString.
 					control.cancel();
@@ -46,7 +46,7 @@ public class PayFineUI {
 				}
 				break;
 				
-			case PAYING:
+			case PAYING: //case paying in which checks the amount for paying.
 				double amount = 0;
 				String amountString = input ("Enter amount (<Enter> cancels) : "); //amtStr to amountString and increased space.
 				if (amountString.length() == 0) { //amtStr to amountString
@@ -64,16 +64,16 @@ public class PayFineUI {
 				control.payFine(amount);
 				break;
 								
-			case CANCELLED:
+			case CANCELLED: //case cancelled which displays that paying fine process is cancelled.
 				output("Pay Fine process cancelled");
 				return;
 			
-			case COMPLETED:
+			case COMPLETED: //case completed which displays that paying fine process is completed.
 				output("Pay Fine process complete");
 				return;
 			
 			default:
-				output("Unhandled state");
+				output("Unhandled state"); //default case.
 				throw new RuntimeException("FixBookUI : unhandled state :" + state);			
 			
 			}		
@@ -96,5 +96,4 @@ public class PayFineUI {
 		output(object);
 	}
 
-
-}
+} //reduced unnecessary white space line.
