@@ -38,11 +38,11 @@ public class PayFineUI {
 					break;
 				}
 				try {
-					int memberId = Integer.valueOf(memberString).intValue(); //memStr to memberString.
-					control.cardSwiped(memberId);
+					int memberID = Integer.valueOf(memberString).intValue(); //memStr to memberString and memberId to memberID.
+					control.cardSwiped(memberID); //changed memberId to memberID.
 				}
 				catch (NumberFormatException e) {
-					output("Invalid memberId");
+					output("Invalid memberID"); //changed memberId to memberID.
 				}
 				break;
 				
