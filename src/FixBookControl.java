@@ -4,12 +4,12 @@ public class FixBookControl {
 	private enum CONTROL_STATE { INITIALISED, READY, FIXING };
 	private CONTROL_STATE state;
 	
-	private library library;
+	private Library library; //library to Library.
 	private book currentBook;
 
 
 	public FixBookControl() {
-		this.library = library.INSTANCE();
+		this.library = Library.INSTANCE(); //library to Library.
 		state = CONTROL_STATE.INITIALISED;
 	}
 	
