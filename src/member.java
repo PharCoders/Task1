@@ -7,12 +7,12 @@ import java.util.Map;
 @SuppressWarnings("serial")
 public class member implements Serializable {
 
-	private String LN;
-	private String FN;
-	private String EM;
-	private int PN;
-	private int ID;
-	private double FINES;
+	private String lastName; //LN to lastName.
+	private String firstName; //FN to firstName.
+	private String email; //EM to email.
+	private int phoneNo; //PN to phoneNo.
+	private int memberID; //ID to memberID.
+	private double fines; // FINES to fines.
 	
 	private Map<Integer, loan> LNS;
 
