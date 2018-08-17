@@ -34,13 +34,15 @@ public class ReturnBookControl {
 			ui.display("Invalid Book ID"); //changed Id to ID.
 			return;
 		}
-		if (!currentBook.On_loan()) {
+		
+		if (!currentBook.On_loan()) { // added white space line.
 			ui.display("Book has not been borrowed");
 			return;
 		}		
 		currentLoan = Library.getLoanByBookID(bookID);	//changed library to Library and bookId to bookID.
 		double overDueFine = 0.0;
-		if (currentLoan.isOverDue()) {
+		
+		if (currentLoan.isOverDue()) { //added white space line.
 			overDueFine = Library.calculateOverDueFine(currentLoan);  // changed library to Library.
 		}
 		ui.display("Inspecting");
@@ -73,5 +75,4 @@ public class ReturnBookControl {
 		state = CONTROL_STATE.READY;				
 	}
 
-
-}
+}//deleted white space line.
