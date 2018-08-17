@@ -5,7 +5,7 @@ public class ReturnBookControl {
 	private CONTROL_STATE state;
 	
 	private Library library; //changed library to Library.
-	private loan currentLoan;
+	private loan currentLoan; //changed loan to Loan.
 	
 
 	public ReturnBookControl() {
@@ -38,7 +38,7 @@ public class ReturnBookControl {
 			ui.display("Book has not been borrowed");
 			return;
 		}		
-		currentLoan = library.getLoanByBookId(bookId);	//changed library to Library.
+		currentLoan = Library.getLoanByBookId(bookId);	//changed library to Library.
 		double overDueFine = 0.0;
 		if (currentLoan.isOverDue()) {
 			overDueFine = Library.calculateOverDueFine(currentLoan);  // changed library to Library.
