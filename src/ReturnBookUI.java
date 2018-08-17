@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class ReturnBookUI {
+public class ReturnBookUI { //Initialising class.
 
 	public static enum UI_STATE { INITIALISED, READY, INSPECTING, COMPLETED };
 
@@ -21,14 +21,14 @@ public class ReturnBookUI {
 	public void run() {		
 		output("Return Book Use Case UI\n");
 		
-		while (true) {
+		while (true) { //while statement.
 			
-			switch (state) {
+			switch (state) { //switch case.
 			
-			case INITIALISED:
+			case INITIALISED: //case initialised.
 				break;
 				
-			case READY:
+			case READY: //case ready in which it checks for checking the book and scanning the book to return.
 				String bookString = input("Scan Book (<enter> completes): "); //changed bookStr to bookString.
 				if (bookString.length() == 0) { //changed bookStr to bookString.
 					control.scanningComplete();
@@ -44,7 +44,7 @@ public class ReturnBookUI {
 				}
 				break;				
 				
-			case INSPECTING:
+			case INSPECTING: //case inspecting in which it checks for inspecting the book for any damage.
 				String ans = input("Is book damaged? (Y/N): ");
 				boolean isDamaged = false;
 				if (ans.toUpperCase().equals("Y")) {					
@@ -52,11 +52,11 @@ public class ReturnBookUI {
 				}
 				control.dischargeLoan(isDamaged);
 			
-			case COMPLETED:
+			case COMPLETED: //case completed in which it prints that the process of returning book is completed.
 				output("Return processing complete");
 				return;
 			
-			default:
+			default: //default case.
 				output("Unhandled state");
 				throw new RuntimeException("ReturnBookUI : unhandled state :" + state);			
 			}
@@ -77,11 +77,11 @@ public class ReturnBookUI {
 			
 	public void display(Object object) {
 		output(object);
-	}
+	} //increased extra white space line below.
 	
-	public void setState(UI_STATE state) {
+	
+	public void setState(UI_STATE state) { 
 		this.state = state;
 	}
 
-	
-}
+} //Deleted extra white space line.
