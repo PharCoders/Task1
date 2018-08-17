@@ -5,7 +5,7 @@ public class ReturnBookControl {
 	private CONTROL_STATE state;
 	
 	private Library library; //changed library to Library.
-	private loan currentLoan; //changed loan to Loan.
+	private Loan currentLoan; //changed loan to Loan.
 	
 
 	public ReturnBookControl() {
@@ -24,21 +24,21 @@ public class ReturnBookControl {
 	}
 
 
-	public void bookScanned(int bookId) {
+	public void bookScanned(int bookID) { //changed bookId to bookID.
 		if (!state.equals(CONTROL_STATE.READY)) {
 			throw new RuntimeException("ReturnBookControl: cannot call bookScanned except in READY state");
 		}	
-		book currentBook = library.Book(bookId);
+		Book currentBook = library.Book(bookID); //changed book to Book and bookId to bookID.
 		
 		if (currentBook == null) {
-			ui.display("Invalid Book Id");
+			ui.display("Invalid Book ID"); //changed Id to ID.
 			return;
 		}
 		if (!currentBook.On_loan()) {
 			ui.display("Book has not been borrowed");
 			return;
 		}		
-		currentLoan = Library.getLoanByBookId(bookId);	//changed library to Library.
+		currentLoan = Library.getLoanByBookID(bookID);	//changed library to Library and bookId to bookID.
 		double overDueFine = 0.0;
 		if (currentLoan.isOverDue()) {
 			overDueFine = Library.calculateOverDueFine(currentLoan);  // changed library to Library.
