@@ -1,4 +1,4 @@
-public class ReturnBookControl {
+public class ReturnBookControl { //initiating class.
 
 	private ReturnBookUI ui;
 	private enum CONTROL_STATE { INITIALISED, READY, INSPECTING };
@@ -10,7 +10,7 @@ public class ReturnBookControl {
 
 	public ReturnBookControl() {
 		this.library = Library.INSTANCE(); //changed library to Library as it is of instance.
-		state = CONTROL_STATE.INITIALISED;
+		state = CONTROL_STATE.INITIALISED; //setting state to initialised.
 	}
 	
 	
@@ -20,12 +20,12 @@ public class ReturnBookControl {
 		}	
 		this.ui = ui;
 		ui.setState(ReturnBookUI.UI_STATE.READY);
-		state = CONTROL_STATE.READY;		
+		state = CONTROL_STATE.READY; //sets state to ready.		
 	}
 
 
 	public void bookScanned(int bookID) { //changed bookId to bookID.
-		if (!state.equals(CONTROL_STATE.READY)) {
+		if (!state.equals(CONTROL_STATE.READY)) { //checks state equals to ready or not.
 			throw new RuntimeException("ReturnBookControl: cannot call bookScanned except in READY state");
 		}	
 		Book currentBook = library.Book(bookID); //changed book to Book and bookId to bookID.
@@ -36,18 +36,18 @@ public class ReturnBookControl {
 		}
 		
 		if (!currentBook.On_loan()) { // added white space line.
-			ui.display("Book has not been borrowed");
+			ui.display("Book has not been borrowed"); //displays the message after checking whether book is borrowed or not.
 			return;
 		}		
 		currentLoan = Library.getLoanByBookID(bookID);	//changed library to Library and bookId to bookID.
-		double overDueFine = 0.0;
+		double overDueFine = 0.0; //sets overduefine to 0.
 		
 		if (currentLoan.isOverDue()) { //added white space line.
 			overDueFine = Library.calculateOverDueFine(currentLoan);  // changed library to Library.
 		}
 		ui.display("Inspecting");
-		ui.display(currentBook.toString());
-		ui.display(currentLoan.toString());
+		ui.display(currentBook.toString()); //displays current book's to string method.
+		ui.display(currentLoan.toString()); //displays current loan's to string method.
 		
 		if (currentLoan.isOverDue()) {
 			ui.display(String.format("\nOverdue fine : $%.2f", overDueFine));
@@ -57,7 +57,7 @@ public class ReturnBookControl {
 	}
 
 
-	public void scanningComplete() {
+	public void scanningComplete() { //complete status checking.
 		if (!state.equals(CONTROL_STATE.READY)) {
 			throw new RuntimeException("ReturnBookControl: cannot call scanningComplete except in READY state");
 		}	
@@ -72,7 +72,7 @@ public class ReturnBookControl {
 		library.dischargeLoan(currentLoan, isDamaged);
 		currentLoan = null;
 		ui.setState(ReturnBookUI.UI_STATE.READY);
-		state = CONTROL_STATE.READY;				
+		state = CONTROL_STATE.READY; //sets the state to ready.				
 	}
 
 }//deleted white space line.
