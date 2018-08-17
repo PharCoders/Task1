@@ -4,12 +4,12 @@ public class ReturnBookControl {
 	private enum CONTROL_STATE { INITIALISED, READY, INSPECTING };
 	private CONTROL_STATE state;
 	
-	private library library;
+	private Library library; //changed library to Library.
 	private loan currentLoan;
 	
 
 	public ReturnBookControl() {
-		this.library = library.INSTANCE();
+		this.library = Library.INSTANCE(); //changed library to Library as it is of instance.
 		state = CONTROL_STATE.INITIALISED;
 	}
 	
@@ -38,10 +38,10 @@ public class ReturnBookControl {
 			ui.display("Book has not been borrowed");
 			return;
 		}		
-		currentLoan = library.getLoanByBookId(bookId);	
+		currentLoan = library.getLoanByBookId(bookId);	//changed library to Library.
 		double overDueFine = 0.0;
 		if (currentLoan.isOverDue()) {
-			overDueFine = library.calculateOverDueFine(currentLoan);
+			overDueFine = Library.calculateOverDueFine(currentLoan);  // changed library to Library.
 		}
 		ui.display("Inspecting");
 		ui.display(currentBook.toString());
