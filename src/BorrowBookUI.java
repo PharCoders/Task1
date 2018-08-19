@@ -54,7 +54,7 @@ public class BorrowBookUI {
 				}
 				try {
 					int memberID = Integer.valueOf(memberString).intValue();		//Changed to memberID and memberString
-					control.Swiped(memberId);
+					control.Swiped(memberID);		//Changed to memberID
 				}
 				catch (NumberFormatException e) {
 					output("Invalid Member Id");
