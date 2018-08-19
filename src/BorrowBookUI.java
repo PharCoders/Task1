@@ -112,6 +112,5 @@ public class BorrowBookUI {
 	public void display(Object object) {
 		output(object);		
 	}
-
-
-}
+	
+}		//Reduced extra line breaks
