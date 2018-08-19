@@ -57,7 +57,7 @@ public class BorrowBookUI {
 					control.Swiped(memberID);		//Changed to memberID
 				}
 				catch (NumberFormatException e) {
-					output("Invalid Member Id");
+					output("Invalid Member ID");		//Changed to ID
 				}
 				break;
 
@@ -79,7 +79,7 @@ public class BorrowBookUI {
 					control.Scanned(bookID);		//Changed to bookID
 					
 				} catch (NumberFormatException e) {
-					output("Invalid Book Id");
+					output("Invalid Book ID");		//Changed to ID
 				} 
 				break;
 					
