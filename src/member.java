@@ -105,9 +105,9 @@ public class member implements Serializable {
 	}
 
 
-	public void dischargeLoan(loan loan) {
-		if (LNS.containsKey(loan.getId())) {
-			LNS.remove(loan.getId());
+	public void dischargeLoan(Loan loan) { //loan to Loan
+		if (LNS.containsKey(loan.getloanID())) { //getId to getloanID
+			LNS.remove(loan.getloanID()); //getId to getloanID
 		}
 		else {
 			throw new RuntimeException("No such loan held by member");
