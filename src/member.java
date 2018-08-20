@@ -30,10 +30,10 @@ public class member implements Serializable {
 	
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Member:  ").append(ID).append("\n")
-		  .append("  Name:  ").append(LN).append(", ").append(FN).append("\n")
-		  .append("  Email: ").append(EM).append("\n")
-		  .append("  Phone: ").append(PN)
+		sb.append("Member: ").append(memberID).append("\n") //ID to memberID
+		  .append("Name: ").append(lastName).append(", ").append(firstName).append("\n") //LN to lastName.FN to firstName
+		  .append("Email: ").append(email).append("\n") //EM to email
+		  .append("Phone: ").append(phoneNo) //PN to phoneNo
 		  .append("\n")
 		  .append(String.format("  Fines Owed :  $%.2f", FINES))
 		  .append("\n");
