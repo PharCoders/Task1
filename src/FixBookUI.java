@@ -12,7 +12,7 @@ public class FixBookUI {
 	
 	public FixBookUI(FixBookControl control) {
 		this.control = control;
-		input = new Scanner(System.input); //system.in to system.input
+		input = new Scanner(System.in); 
 		state = UI_STATE.INITIALISED;
 		control.setUI(this);
 	}
@@ -31,13 +31,13 @@ public class FixBookUI {
 			switch (state) {
 			
 			case READY:
-				String bookStr = input("Scan Book (<enter> completes): ");
-				if (bookStr.length() == 0) {
+				String bookString = input("Scan Book (<enter> completes): "); //bookStr to bookString
+				if (bookString.length() == 0) { //bookStr to bookString
 					control.scanningComplete();
 				}
 				else {
 					try {
-						int bookID = Integer.valueOf(bookStr).intValue(); //bookId to bookID
+						int bookID = Integer.valueOf(bookString).intValue(); //bookId to bookID. bookStr to bookString
 						control.bookScanned(bookID); //bookId to bookID
 					}
 					catch (NumberFormatException e) {
