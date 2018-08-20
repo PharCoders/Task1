@@ -17,12 +17,12 @@ public class member implements Serializable {
 	private Map<Integer, loan> LNS;
 
 	
-	public member(String lastName, String firstName, String email, int phoneNo, int id) {
-		this.LN = lastName;
-		this.FN = firstName;
-		this.EM = email;
-		this.PN = phoneNo;
-		this.ID = id;
+	public member(String lastName, String firstName, String email, int phoneNo, int memberID) { //id to memberID
+		this.lastName = lastName; //LN to lastName
+		this.firstName = firstName; //FN to firstName
+		this.email = email; //EM to email
+		this.phoneNo = phoneNo; //PN to phoneNo
+ 		this.memberID = id; //ID to memberID
 		
 		this.LNS = new HashMap<>();
 	}
