@@ -38,15 +38,15 @@ public class member implements Serializable {
 		  .append(String.format("  Fines Owed :  $%.2f", FINES))
 		  .append("\n");
 		
-		for (loan loan : LNS.values()) {
-			sb.append(loan).append("\n");
+		for (Loan loan : LNS.values()) { //loan to Loan
+ 			sb.append(loan).append("\n");
 		}		  
 		return sb.toString();
 	}
 
 	
-	public int getId() {
-		return ID;
+	public int getmemberID() { //Id to memberID
+		return memberID; //ID to memberID
 	}
 
 	
@@ -61,13 +61,13 @@ public class member implements Serializable {
 
 	
 	public double getFinesOwed() {
-		return FINES;
+		return fines; //FINES to fines
 	}
 
 	
-	public void takeOutLoan(loan loan) {
-		if (!LNS.containsKey(loan.getId())) {
-			LNS.put(loan.getId(), loan);
+	public void takeOutLoan(Loan loan) { //loan to Loan
+		if (!LNS.containsKey(Loan.getLoanID())) { loan to Loan. getId to getLoanID
+			LNS.put(Loan.getLoanID(), loan); //loan to Loan. getId to getLoanID
 		}
 		else {
 			throw new RuntimeException("Duplicate loan added to member");
