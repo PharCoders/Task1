@@ -66,8 +66,8 @@ public class member implements Serializable {
 
 	
 	public void takeOutLoan(Loan loan) { //loan to Loan
-		if (!LNS.containsKey(Loan.getLoanID())) { loan to Loan. getId to getLoanID
-			LNS.put(Loan.getLoanID(), loan); //loan to Loan. getId to getLoanID
+		if (!LNS.containsKey(Loan.getloanID())) { loan to Loan. getId to getloanID
+			LNS.put(Loan.getloanID(), loan); //loan to Loan. getId to getloanID
 		}
 		else {
 			throw new RuntimeException("Duplicate loan added to member");
@@ -75,18 +75,18 @@ public class member implements Serializable {
 	}
 
 	
-	public String getLastName() {
-		return LN;
+	public String getlastName() { //LastName to lastName
+		return lastName; //LN to lastName
 	}
 
 	
-	public String getFirstName() {
-		return FN;
+	public String getfirstName() { //FirstName to firstName
+		return firstName; //FN to firstName
 	}
 
 
 	public void addFine(double fine) {
-		FINES += fine;
+		fines += fine; //FINES to fines
 	}
 	
 	public double payFine(double amount) {
