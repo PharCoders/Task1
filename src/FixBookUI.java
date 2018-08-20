@@ -12,7 +12,7 @@ public class FixBookUI {
 	
 	public FixBookUI(FixBookControl control) {
 		this.control = control;
-		input = new Scanner(System.in);
+		input = new Scanner(System.input); //system.in to system.input
 		state = UI_STATE.INITIALISED;
 		control.setUI(this);
 	}
@@ -37,8 +37,8 @@ public class FixBookUI {
 				}
 				else {
 					try {
-						int bookId = Integer.valueOf(bookStr).intValue();
-						control.bookScanned(bookId);
+						int bookID = Integer.valueOf(bookStr).intValue(); //bookId to bookID
+						control.bookScanned(bookID); //bookId to bookID
 					}
 					catch (NumberFormatException e) {
 						output("Invalid bookId");
