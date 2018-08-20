@@ -94,12 +94,12 @@ public class member implements Serializable {
 			throw new RuntimeException("Member.payFine: amount must be positive");
 		}
 		double change = 0;
-		if (amount > FINES) {
-			change = amount - FINES;
+		if (amount > fines) { //FINES to fines
+			change = amount - fines; //FINES to fines
 			FINES = 0;
 		}
 		else {
-			FINES -= amount;
+			fines -= amount; //FINES to fines
 		}
 		return change;
 	}
