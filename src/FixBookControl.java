@@ -5,7 +5,7 @@ public class FixBookControl {
 	private CONTROL_STATE state;
 	
 	private Library library; //library to Library.
-	private book currentBook;
+	private Book currentBook; //book to Book
 
 
 	public FixBookControl() {
