@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("serial")
-public class member implements Serializable {
+public class Member implements Serializable { //member to Member
 
 	private String lastName; //LN to lastName.
 	private String firstName; //FN to firstName.
