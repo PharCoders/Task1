@@ -49,9 +49,9 @@ public class Calendar {
 
 	public synchronized Date getDueDate(int loanPeriod) {
 		Date now = Date();
-		cal.add(java.util.Calendar.DATE, loanPeriod);
-		Date dueDate = cal.getTime();
-		cal.setTime(now);
+		calendar.add(java.util.Calendar.DATE, loanPeriod);		//Changed the name to 'calendar'
+		Date dueDate = calendar.getTime();		//Changed the name to 'calendar'
+		calendar.setTime(now);		//Changed the name to 'calendar'
 		return dueDate;
 	}
 	
