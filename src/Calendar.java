@@ -48,7 +48,7 @@ public class Calendar {
 	}
 
 	public synchronized Date getDueDate(int loanPeriod) {
-		Date now = date();		//Changed to smallcase 'date'
+		Date now = new date();		//Changed to smallcase 'date' and 'now'
 		calendar.add(java.util.Calendar.DATE, loanPeriod);		//Changed the name to 'calendar'
 		Date dueDate = calendar.getTime();		//Changed the name to 'calendar'
 		calendar.setTime(now);		//Changed the name to 'calendar'
@@ -56,7 +56,7 @@ public class Calendar {
 	}
 	
 	public synchronized long getDaysDifference(Date targetDate) {
-		long diffMillis = date().getTime() - targetDate.getTime();		//Changed to smallcase 'date '
+		long diffMillis = date().getTime() - targetDate.getTime();		//Changed to smallcase 'date'
 	    long diffDays = TimeUnit.DAYS.convert(diffMillis, TimeUnit.MILLISECONDS);
 	    return diffDays;
 	}
