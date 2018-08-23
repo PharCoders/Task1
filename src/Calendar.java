@@ -48,7 +48,7 @@ public class Calendar {
 	}
 
 	public synchronized Date getDueDate(int loanPeriod) {
-		Date now = Date();
+		Date now = date();		//Changed to smallcase 'date'
 		calendar.add(java.util.Calendar.DATE, loanPeriod);		//Changed the name to 'calendar'
 		Date dueDate = calendar.getTime();		//Changed the name to 'calendar'
 		calendar.setTime(now);		//Changed the name to 'calendar'
