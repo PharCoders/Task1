@@ -36,11 +36,11 @@ public class Calendar {
 	}
 	public synchronized Date Date() {
 		try {
-	        cal.set(java.util.Calendar.HOUR_OF_DAY, 0);  
-	        cal.set(java.util.Calendar.MINUTE, 0);  
-	        cal.set(java.util.Calendar.SECOND, 0);  
-	        cal.set(java.util.Calendar.MILLISECOND, 0);
-			return cal.getTime();
+	        calendar.set(java.util.Calendar.HOUR_OF_DAY, 0);		//Changed the name to 'calendar'  
+	        calendar.set(java.util.Calendar.MINUTE, 0);  		//Changed the name to 'calendar'
+	        calendar.set(java.util.Calendar.SECOND, 0);  		//Changed the name to 'calendar'
+	        calendar.set(java.util.Calendar.MILLISECOND, 0);		//Changed the name to 'calendar'
+			return calendar.getTime();		//Changed the name to 'calendar'
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e);
