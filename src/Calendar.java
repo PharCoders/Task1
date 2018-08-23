@@ -19,7 +19,7 @@ public class Calendar {
 	}
 	
 	public void incrementDate(int days) {
-		cal.add(java.util.Calendar.DATE, days);		
+		calendar.add(java.util.Calendar.DATE, days);		//Changed the name to 'calendar'
 	}
 	
 	public synchronized void setDate(Date date) {
