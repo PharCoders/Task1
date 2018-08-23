@@ -24,11 +24,11 @@ public class Calendar {
 	
 	public synchronized void setDate(Date date) {
 		try {
-			cal.setTime(date);
-	        cal.set(java.util.Calendar.HOUR_OF_DAY, 0);  
-	        cal.set(java.util.Calendar.MINUTE, 0);  
-	        cal.set(java.util.Calendar.SECOND, 0);  
-	        cal.set(java.util.Calendar.MILLISECOND, 0);
+			calendar.setTime(date);		//Changed the name to 'calendar'
+	        calendar.set(java.util.Calendar.HOUR_OF_DAY, 0);  		//Changed the name to 'calendar'
+	        calendar.set(java.util.Calendar.MINUTE, 0);  		//Changed the name to 'calendar'
+	        calendar.set(java.util.Calendar.SECOND, 0);  		//Changed the name to 'calendar'
+	        calendar.set(java.util.Calendar.MILLISECOND, 0);		//Changed the name to 'calendar'
 		}
 		catch (Exception e) {
 			throw new RuntimeException(e);
