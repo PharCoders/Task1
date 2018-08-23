@@ -34,7 +34,7 @@ public class Calendar {
 			throw new RuntimeException(e);
 		}	
 	}
-	public synchronized Date Date() {
+	public synchronized Date date() {		//Changed to smallcase 'date'
 		try {
 	        calendar.set(java.util.Calendar.HOUR_OF_DAY, 0);		//Changed the name to 'calendar'  
 	        calendar.set(java.util.Calendar.MINUTE, 0);  		//Changed the name to 'calendar'
