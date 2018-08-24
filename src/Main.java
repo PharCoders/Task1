@@ -170,9 +170,9 @@ public class Main {
 	private static void incrementDate() {
 		try {
 			int days = Integer.valueOf(input("Enter number of days: ")).intValue();
-			CAL.incrementDate(days);
-			LIB.checkCurrentLoans();
-			output(SDF.format(CAL.Date()));
+			calendar.incrementDate(days); //CAL to calendar
+			library.checkCurrentLoans(); //LIB to library
+			output(simpleDateFormat.format(calendar.Date())); //SDF to simpleDateFormat. CAL to calendar
 			
 		} catch (NumberFormatException e) {
 			 output("\nInvalid number of days\n");
@@ -185,7 +185,7 @@ public class Main {
 		String author = input("Enter author: ");
 		String title  = input("Enter title: ");
 		String callNo = input("Enter call number: ");
-		book book = LIB.Add_book(author, title, callNo);
+		Book book = library.Add_book(author, title, callNo); //book to Book.LIB to library
 		output("\n" + book + "\n");
 		
 	}
@@ -197,7 +197,7 @@ public class Main {
 			String firstName  = input("Enter first name: ");
 			String email = input("Enter email: ");
 			int phoneNo = Integer.valueOf(input("Enter phone number: ")).intValue();
-			member member = LIB.Add_mem(lastName, firstName, email, phoneNo);
+			Member member = library.Add_mem(lastName, firstName, email, phoneNo); //member to Member. LIB to library
 			output("\n" + member + "\n");
 			
 		} catch (NumberFormatException e) {
@@ -209,7 +209,7 @@ public class Main {
 
 	private static String input(String prompt) {
 		System.out.print(prompt);
-		return IN.nextLine();
+		return identity.nextLine(); // IN to identity
 	}
 	
 	
