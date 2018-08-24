@@ -4,32 +4,32 @@ import java.util.Scanner;
 
 public class Main {
 	
-	private static Scanner IN;
-	private static library LIB;
-	private static String MENU;
-	private static Calendar CAL;
-	private static SimpleDateFormat SDF;
+	private static Scanner identity; //IN to identity
+	private static library library; //LIB to library
+	private static String menu; //MENU to menu
+	private static Calendar calendar; //CAL to calendar
+	private static SimpleDateFormat simpleDateFormat; //SDF to simpleDateFormat
 	
 	
 	private static String Get_menu() {
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("\nLibrary Main Menu\n\n")
-		  .append("  M  : add member\n")
-		  .append("  LM : list members\n")
+		  .append("addMember : add member\n") //M to addMember
+		  .append("listMembers : list members\n") //LM to listMembers
 		  .append("\n")
-		  .append("  B  : add book\n")
-		  .append("  LB : list books\n")
-		  .append("  FB : fix books\n")
+		  .append("addBook : add book\n") //B to addBook
+		  .append("listBooks : list books\n") //LB to listBooks
+		  .append("fixBooks : fix books\n") //FB to fixBooks
 		  .append("\n")
-		  .append("  L  : take out a loan\n")
-		  .append("  R  : return a loan\n")
-		  .append("  LL : list loans\n")
+		  .append("takeOutaLoan : take out a loan\n") //L to takeOutaLoan
+		  .append("returnaLoan : return a loan\n") //R to returnaLoan
+		  .append("listLoans : list loans\n") //LL to listLoans
 		  .append("\n")
-		  .append("  P  : pay fine\n")
+		  .append("payFine : pay fine\n") P to payFine 
 		  .append("\n")
-		  .append("  T  : increment date\n")
-		  .append("  Q  : quit\n")
+		  .append("incrementDate : increment date\n") //T to incrementDate
+		  .append("quit : quit\n") //Q to quit
 		  .append("\n")
 		  .append("Choice : ");
 		  
