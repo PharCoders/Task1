@@ -39,10 +39,10 @@ public class Main {
 
 	public static void main(String[] args) {		
 		try {			
-			IN = new Scanner(System.in);
-			LIB = library.INSTANCE();
-			CAL = Calendar.getInstance();
-			SDF = new SimpleDateFormat("dd/MM/yyyy");
+			identity = new Scanner(System.in); //IN to identity
+			library = library.INSTANCE(); //LIB to library
+			calendar = Calendar.getInstance(); //CAL to calendar
+			simpleDateFormat = new SimpleDateFormat("dd/mm/yyyy"); //SDF to simpleDateFormat. (dd/MM/yyyy) to (dd/mm/yyyy)
 	
 			for (member m : LIB.Members()) {
 				output(m);
