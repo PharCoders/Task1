@@ -44,66 +44,66 @@ public class Main {
 			calendar = Calendar.getInstance(); //CAL to calendar
 			simpleDateFormat = new SimpleDateFormat("dd/mm/yyyy"); //SDF to simpleDateFormat. (dd/MM/yyyy) to (dd/mm/yyyy)
 	
-			for (member m : LIB.Members()) {
-				output(m);
+			for (Member member : library.Members()) { //member to Member. m to member. LIB to library
+				output(member); //m to member
 			}
 			output(" ");
-			for (book b : LIB.Books()) {
-				output(b);
+			for (Book book : library.Books()) { //book to Book. b to book. LIB to library
+				output(book); //b to book
 			}
 						
-			MENU = Get_menu();
+			menu = Get_menu(); //MENU to menu
 			
 			boolean e = false;
 			
 			while (!e) {
 				
-				output("\n" + SDF.format(CAL.Date()));
-				String c = input(MENU);
+				output("\n" + simpleDateFormat.format(calendar.Date())); //SDF to simpleDateFormat. CAL to calendar
+				String c = input(menu); //MENU to menu
 				
 				switch (c.toUpperCase()) {
 				
-				case "M": 
+				case "addMember": //M to addMember 
 					addMember();
 					break;
 					
-				case "LM": 
+				case "listMembers": //LM to listMembers 
 					listMembers();
 					break;
 					
-				case "B": 
+				case "addBook": //B to addBook
 					addBook();
 					break;
 					
-				case "LB": 
+				case "listBooks": //LB to listBooks 
 					listBooks();
 					break;
 					
-				case "FB": 
+				case "fixBooks": //FB to fixBooks
 					fixBooks();
 					break;
 					
-				case "L": 
+				case "takeOutaLoan": //L to takeOutaLoan
 					borrowBook();
 					break;
 					
-				case "R": 
+				case "returnaLoan": //R to returnaLoan
 					returnBook();
 					break;
 					
-				case "LL": 
+				case "listLoans": //LL to listLoans
 					listCurrentLoans();
 					break;
 					
-				case "P": 
+				case "payFine": //P to payFine 
 					payFine();
 					break;
 					
-				case "T": 
+				case "incrementDate": //T to incrementDate 
 					incrementDate();
 					break;
 					
-				case "Q": 
+				case "quit": //Q to quit 
 					e = true;
 					break;
 					
