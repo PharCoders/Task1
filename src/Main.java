@@ -127,7 +127,7 @@ public class Main {
 
 	private static void listCurrentLoans() {
 		output("");
-		for (loan loan : LIB.CurrentLoans()) {
+		for (Loan loan : library.CurrentLoans()) { //loan to Loan. LIB to library
 			output(loan + "\n");
 		}		
 	}
@@ -136,7 +136,7 @@ public class Main {
 
 	private static void listBooks() {
 		output("");
-		for (book book : LIB.Books()) {
+		for (Book book : library.Books()) { //book to Book. LIB to library
 			output(book + "\n");
 		}		
 	}
@@ -145,7 +145,7 @@ public class Main {
 
 	private static void listMembers() {
 		output("");
-		for (member member : LIB.Members()) {
+		for (Member member : library.Members()) { //member to Member. LIB to library
 			output(member + "\n");
 		}		
 	}
