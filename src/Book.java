@@ -10,7 +10,7 @@ public class Book implements Serializable {		//Capitalized Class Name
 	private int bookID;		//Changed to bookID
 	
 	private enum STATE { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
-	private STATE state;
+	private STATE State;
 	
 	
 	public book (String author, String title, String callNo, int bookID) {
